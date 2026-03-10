@@ -1,0 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.impal;
+
+/**
+ *
+ * @author yafia
+ */
+import java.util.Scanner;
+
+public class soal3 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int accountNumberDB = 12345;
+        String statusCodeDB = "valid";
+
+        int accountNumber;
+        double amountOfSale;
+
+        System.out.print("Masukkan nomor akun: ");
+        accountNumber = input.nextInt();
+
+        System.out.print("Masukkan nominal total: ");
+        amountOfSale = input.nextDouble();
+
+        if (accountNumber == accountNumberDB && statusCodeDB.equals("valid")) {
+            System.out.println("Invoice Produced");
+            System.out.println("Account Number: " + accountNumber);
+            System.out.println("Amount of Sale: $" + amountOfSale);
+
+        } else {
+            System.out.println("Nomor akun tidak ditemukan atau status tidak valid.");
+
+        }
+    }
+}
