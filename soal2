@@ -1,0 +1,59 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.impal;
+
+/**
+ *
+ * @author yafia
+ */
+import java.util.Scanner;
+public class soal2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int computerAmount;
+        int peripheral;
+        int serviceTime;
+        int baseFee = 0;
+        int additionalFee = 0;
+        double totalBaseFee;
+        char dropOff;
+
+        System.out.print("Jumlah komputer: ");
+        computerAmount = input.nextInt();
+
+        System.out.print("Jumlah peripheral: ");
+        peripheral = input.nextInt();
+
+        System.out.print("Jam service (0-23): ");
+        serviceTime = input.nextInt();
+
+        System.out.print("Drop off dan pick up sendiri? (y/n): ");
+        dropOff = input.next().charAt(0);
+
+        if (computerAmount == 1 || computerAmount == 2) {
+            baseFee = 50;
+            additionalFee = 0;
+        } else if (computerAmount >= 3 && computerAmount <= 10) {
+            baseFee = 100;
+            additionalFee = 10 * peripheral;
+        } else if (computerAmount > 10) {
+            baseFee = 500;
+            additionalFee = 10 * peripheral;
+        }
+
+        if (serviceTime < 8 || serviceTime > 17) {
+            baseFee = baseFee * 2;
+        }
+
+        totalBaseFee = baseFee + additionalFee;
+
+        if (dropOff == 'y') {
+            totalBaseFee = totalBaseFee / 2;
+        }
+
+        System.out.println("Total biaya servis = $" + totalBaseFee);
+    }
+}
